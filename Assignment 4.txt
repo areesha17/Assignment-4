@@ -1,0 +1,214 @@
+// Question 2:
+// ANSWERE:
+void main() {
+  table(2);
+}
+
+void table(var number) {
+  for (var i = 1; i <= 10; i++) {
+    print("2 x ${i} = ${i * number}");
+  }
+}
+
+
+
+// Question 3:
+// ANSWERE:
+void main() {
+  divide(2);
+}
+
+void divide(var number) {
+  List lst = [2, 4, 6, 8, 9];
+  for (var i in lst) {
+    num result = i / number;
+    print(result);
+  }
+}
+
+
+
+// Question 4:
+// ANSWERE:
+void main() {
+  var f_Student_Name = ["Ayesha", "Fatima", "Rimsha", "Sana", "Javeria"];
+  var f_Eng = [88, 70, 77, 60, 67];
+  var f_Phy = [75, 89, 60, 72, 77];
+  var f_Chem = [70, 45, 60, 46, 75];
+  var f_Math = [90, 84, 75, 86, 69];
+  var f_Pst = [80, 76, 77, 90, 87];
+  var f_Comp = [92, 70, 84, 76, 80];
+
+  for (var i = 0; i < f_Student_Name.length; i++) {
+    s_data(f_Student_Name[i], f_Eng[i], f_Phy[i], f_Chem[i], f_Math[i],
+        f_Pst[i], f_Comp[i]);
+  }
+}
+
+void s_data(var student_Name, eng, phy, chem, math, pst, comp) {
+  int total_Marks = 600;
+  int obtained_Marks = eng + phy + chem + math + pst + comp;
+  print("Student Name: ${student_Name} ");
+  print("Obtained Marks: ${obtained_Marks}");
+  print("Total Marks: ${total_Marks}");
+
+  double percentage = obtained_Marks / total_Marks * 100;
+
+  if (percentage >= 80) {
+    print("Percentage: ${percentage}%");
+    print("Grade: A+");
+    print("---------------");
+  } 
+  else if (percentage >= 70) {
+    print("Percentage: ${percentage}%");
+    print("Grade: A");
+    print("---------------");
+  } 
+  else if (percentage >= 60) {
+    print("Percentage: ${percentage}%");
+    print("Grade: B");
+    print("---------------");
+  } 
+  else if (percentage >= 50) {
+    print("Percentage: ${percentage}%");
+    print("Grade: C");
+    print("---------------");
+  } 
+  else if (percentage >= 40) {
+    print("Percentage: ${percentage}%");
+    print("Grade: D");
+    print("---------------");
+  } 
+  else {
+    print("Percentage: ${percentage}%");
+    print("Grade: FAIL");
+    print("---------------");
+  }
+}
+
+
+
+
+
+
+// Question 5:
+// ANSWERE:
+void main() {
+  Name obj = Name();
+
+  obj.info();
+}
+
+class Name {
+  void info() {
+    print("I like Mango");
+  }
+}
+
+
+
+// Question 6:
+// ANSWERE:
+void main() {
+  Name obj = Name();
+
+  print(obj.name);
+}
+
+class Name {
+  var name = "My Name is Areesha Zafar";
+}
+
+
+
+// Question 7:
+// ANSWERE:
+void main() {
+  Info obj =
+      Info(name: "Areesha Zafar", age: 18, education: "BS(Computer Science)");
+
+  obj.display();
+}
+
+class Info {
+  String name;
+  int age;
+  var education;
+
+  //Constructor
+  Info({required this.name, required this.age, required this.education});
+
+  void display() {
+    print("My Name is ${name}.");
+    print("I am ${age} years old.");
+    print("I am in ${education}.");
+  }
+}
+
+
+
+// Question 8:
+// ANSWERE:
+void main() {
+  Bicycle obj = new Bicycle();
+  obj.setGearCount(27);
+  print(obj.getGearCount());
+  obj.setBrand("Treak");
+  obj.setModel("7.4FX");
+  obj.print_info();
+}
+
+class Vehicle {
+  late String myBrand, myModel;
+  void vehicle() {
+    myBrand = "unknown";
+    myModel = "unknown";
+  }
+
+  void vehicles(String brand, String model) {
+    setBrand(brand);
+    setModel(model);
+  }
+
+  String getBrand() {
+    return myBrand;
+  }
+
+  void setBrand(String brand) {
+    myBrand = brand;
+  }
+
+  String getModel() {
+    return myModel;
+  }
+
+  void setModel(String model) {
+    myModel = model;
+  }
+
+  void print_info() {
+    print("${getBrand()}     ${getModel()}");
+  }
+}
+
+class Bicycle extends Vehicle {
+  late int myGearCount;
+
+  void bicycle() {
+    myGearCount = 1;
+  }
+
+  void bicycles(int gearCount) {
+    setGearCount(gearCount);
+  }
+
+  int getGearCount() {
+    return myGearCount;
+  }
+
+  void setGearCount(int gearCount) {
+    myGearCount = gearCount;
+  }
+}
+
+
